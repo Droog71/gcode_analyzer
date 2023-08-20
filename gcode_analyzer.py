@@ -744,7 +744,7 @@ class LightGCode(GCode):
 
 # runs the gcoder script to analyze the gcode file
 def get_gcode_info(filename):
-    gcode = GCode(open(filename, "rU"))
+    gcode = GCode(open(filename, "r"))
     los = "Line object size: " + str(sys.getsizeof(Line("G0 X0"))) + "\n"
     llos = "Light line object size: " + str(sys.getsizeof(LightLine("G0 X0"))) + "\n"
     pos = "Position: " + str(round(gcode.xmin, 1)) + ", " + str(round(gcode.ymin, 1))  + "\n"
